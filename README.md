@@ -1,4 +1,4 @@
-### Android 9 Pie device configuration for Raspbery Pi 3 Model B & B+
+### Android 9 Pie configuration for Raspbery Pi 3 Model B & B+
 
 #### Setup build environment
 The build host is x86_64 platform run ubuntu-16.04 (refer: https://source.android.com/setup/build/initializing)
@@ -29,14 +29,14 @@ $ repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest -b android-9.0.0
 
 2. Download Raspbery Pi 3 device configuration files
 ```bash
-$ mkdir -pv device/brobwind
-$ git clone git://github.com/brobwind/pie-device-brobwind-rpi3 device/brobwind/rpi3
+$ mkdir -pv device/brcm
+$ git clone https://github.com/vasubabu/Device_rpi3 device/brcm/rpi3
 ```
 
 3. Add local manifest file
 ```bash
 $ mkdir -p .repo/local_manifests
-$ ln -sv ../../device/brobwind/rpi3/local_manifest.xml .repo/local_manifests/
+$ ln -sv ../../device/brcm/rpi3/local_manifest.xml .repo/local_manifests/
 ```
 
 4. Downloading
@@ -79,9 +79,3 @@ Then you will get following images in the out/target/product/rpi3 folder:
 2. boot.img
 3. system.img
 4. vendor.img
-5. userdata.img
-
-
-#### For detail info, please refer:
-1. https://www.brobwind.com/archives/1575
-2. https://www.brobwind.com/archives/1541
